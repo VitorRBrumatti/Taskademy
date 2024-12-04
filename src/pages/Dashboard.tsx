@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ProgressChart } from '../components/ProgressChart';
 import { TaskList } from '../components/TaskList';
@@ -7,11 +6,13 @@ import { Clock, AlertCircle } from 'lucide-react';
 export const Dashboard = () => {
   // Sample data - replace with real data from your backend
   const progressData = [
-    { date: 'Mon', completed: 5, total: 8 },
-    { date: 'Tue', completed: 7, total: 10 },
-    { date: 'Wed', completed: 6, total: 9 },
-    { date: 'Thu', completed: 8, total: 12 },
-    { date: 'Fri', completed: 10, total: 15 }
+    { date: 'Dom', completed: 5, total: 8 },
+    { date: 'Seg', completed: 7, total: 10 },
+    { date: 'Ter', completed: 6, total: 9 },
+    { date: 'Qua', completed: 8, total: 12 },
+    { date: 'Qui', completed: 10, total: 15 },
+    { date: 'Sex', completed: 9, total: 13 },
+    { date: 'Sab', completed: 11, total: 16 },
   ];
 
   return (
@@ -24,17 +25,17 @@ export const Dashboard = () => {
         >
           {/* Progress Overview */}
           <div className="bg-white rounded-xl shadow-sm p-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Weekly Progress</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Progresso Semanal</h2>
             <ProgressChart data={progressData} />
           </div>
 
           {/* Upcoming Deadlines */}
           <div className="bg-white rounded-xl shadow-sm p-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Upcoming Deadlines</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Próximos Prazos</h2>
             <div className="space-y-4">
               <div className="flex items-center text-yellow-500">
                 <Clock className="h-5 w-5 mr-2" />
-                <span>Due Soon (Next 48 hours)</span>
+                <span>Vencimento em breve (próximas 48 horas)</span>
               </div>
               <TaskList
                 tasks={[]}
@@ -48,7 +49,7 @@ export const Dashboard = () => {
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
               <span className="flex items-center">
                 <AlertCircle className="h-6 w-6 text-red-500 mr-2" />
-                Overdue Tasks
+                Tasks Expiradas
               </span>
             </h2>
             <TaskList

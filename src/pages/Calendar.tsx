@@ -78,7 +78,7 @@ export const Calendar = () => {
           {/* Calendar Grid */}
           <div className="grid grid-cols-7 gap-px bg-gray-200 rounded-lg overflow-hidden">
             {/* Week days header */}
-            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
+            {['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'].map(day => (
               <div
                 key={day}
                 className="bg-gray-50 py-2 text-center text-sm font-medium text-gray-600"
@@ -114,7 +114,7 @@ export const Calendar = () => {
           >
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-semibold text-gray-800">
-                Tasks for {format(selectedDate, 'MMMM d, yyyy')}
+                Tarefas em {format(selectedDate, 'MMMM d, yyyy')}
               </h3>
               <CalendarIcon className="w-5 h-5 text-gray-400" />
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { LogOut, BookOpen } from 'lucide-react';
@@ -12,23 +11,26 @@ export const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex items-center space-x-2">
             <BookOpen className="h-8 w-8 text-green-600" />
-            <span className="text-xl font-semibold text-green-700">StudyTracker</span>
+            <span className="text-xl font-semibold text-green-700">Taskademy</span>
           </Link>
           
           {user && (
             <div className="flex items-center space-x-4">
               <Link to="/dashboard" className="text-gray-600 hover:text-green-600 transition-colors">
-                Dashboard
+                Página Inicial
               </Link>
-              <Link to="/subjects" className="text-gray-600 hover:text-green-600 transition-colors">
-                Subjects
+              <Link to="/calendar" className="text-gray-600 hover:text-green-600 transition-colors">
+                Calendário
+              </Link>
+              <Link to="/whiteboard" className="text-gray-600 hover:text-green-600 transition-colors">
+                WhiteBoard
               </Link>
               <button
                 onClick={signOut}
                 className="flex items-center space-x-1 text-gray-600 hover:text-green-600 transition-colors"
               >
                 <LogOut className="h-5 w-5" />
-                <span>Sign Out</span>
+                <span>Sair</span>
               </button>
             </div>
           )}

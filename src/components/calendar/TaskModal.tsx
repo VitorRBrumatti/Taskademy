@@ -30,7 +30,7 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
       });
       onClose();
     } catch (error) {
-      console.error('Failed to create task:', error);
+      console.error('Falha na criação de task:', error);
     }
   };
 
@@ -48,7 +48,7 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
         className="bg-white rounded-xl shadow-xl w-full max-w-md"
       >
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
-          <h3 className="text-xl font-semibold text-gray-800">New Task</h3>
+          <h3 className="text-xl font-semibold text-gray-800">Nova Tarefa</h3>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -60,7 +60,7 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Title
+              Título
             </label>
             <input
               type="text"
@@ -73,7 +73,7 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Description
+              Descrição
             </label>
             <textarea
               value={description}
@@ -85,7 +85,7 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Due Date & Time
+              Data e Hora
             </label>
             <input
               type="datetime-local"
@@ -105,9 +105,9 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
               onChange={(e) => setStatus(e.target.value as any)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
             >
-              <option value="pending">Pending</option>
-              <option value="in-progress">In Progress</option>
-              <option value="completed">Completed</option>
+              <option value="pending">Pendente</option>
+              <option value="in-progress">Em progresso</option>
+              <option value="completed">Concluído</option>
             </select>
           </div>
 
@@ -117,13 +117,13 @@ export const TaskModal = ({ onClose, onSubmit, initialDate }: TaskModalProps) =>
               onClick={onClose}
               className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
             >
-              Cancel
+              Cancelar
             </button>
             <button
               type="submit"
               className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
             >
-              Create Task
+              Criar Tarefa
             </button>
           </div>
         </form>

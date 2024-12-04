@@ -43,7 +43,7 @@ export const Login = () => {
           </div>
           
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
-            {isLogin ? 'Welcome back!' : 'Create your account'}
+            {isLogin ? 'Bem-vindo de volta' : 'Crie sua conta'}
           </h2>
           
           {error && (
@@ -61,7 +61,7 @@ export const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors"
-                  placeholder="Email address"
+                  placeholder="Endereço de Email"
                   required
                 />
               </div>
@@ -75,7 +75,7 @@ export const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-colors"
-                  placeholder="Password"
+                  placeholder="Senha"
                   required
                 />
               </div>
@@ -85,7 +85,7 @@ export const Login = () => {
               type="submit"
               className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 font-medium"
             >
-              <span>{isLogin ? 'Sign In' : 'Sign Up'}</span>
+              <span>{isLogin ? 'Login' : 'Cadastre-se'}</span>
               <ArrowRight className="h-5 w-5" />
             </button>
           </form>
@@ -96,8 +96,8 @@ export const Login = () => {
               className="text-green-600 hover:text-green-700 text-sm font-medium"
             >
               {isLogin
-                ? "Don't have an account? Sign up"
-                : 'Already have an account? Sign in'}
+                ? "Não tem uma conta? Cadastre-se"
+                : 'Já tem uma conta? Entrar'}
             </button>
           </div>
         </div>

@@ -22,7 +22,7 @@ export const TaskList = ({ tasks, onUpdateTask }: TaskListProps) => {
   if (tasks.length === 0) {
     return (
       <div className="text-center py-8 text-gray-500">
-        No tasks scheduled for this day
+        Nenhuma tarefa agendada para este dia
       </div>
     );
   }
@@ -55,7 +55,7 @@ export const TaskList = ({ tasks, onUpdateTask }: TaskListProps) => {
               <p className="text-sm text-gray-600 mt-1">{task.description}</p>
             )}
             <div className="text-xs text-gray-500 mt-2">
-              Due at {format(new Date(task.dueDate), 'h:mm a')}
+              Data em {format(new Date(task.dueDate), 'h:mm a')}
             </div>
           </div>
         </motion.div>
