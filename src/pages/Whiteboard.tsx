@@ -8,12 +8,14 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
+import { SortableContext, arrayMove } from '@dnd-kit/sortable';
 import { Column } from '../components/whiteboard/Column';
 import { TaskCard } from '../components/whiteboard/TaskCard';
 import { AddColumnButton } from '../components/whiteboard/AddColumnButton';
 import { Task } from '../types';
 
 export const Whiteboard = () => {
+  const { subjectId } = useParams();
   const [columns, setColumns] = useState([
     { id: 'todo', title: 'To Do', tasks: [] },
     { id: 'inProgress', title: 'In Progress', tasks: [] },
@@ -45,12 +47,12 @@ export const Whiteboard = () => {
       setColumns(columns => {
         const activeCol = columns.find(col => col.id === activeColId);
         const overCol = columns.find(col => col.id === overColId);
-      
+
         if (!activeCol || !overCol) return columns;
-      
+
         const activeTask = activeCol.tasks.find(task => task.id === active.id);
         if (!activeTask) return columns;
-      
+
         return columns.map(col => {
           if (col.id === activeColId) {
             return {
